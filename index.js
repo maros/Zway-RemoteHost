@@ -33,7 +33,7 @@ RemoteHost.prototype.init = function (config) {
         deviceId: "RemoteHost_" + this.id,
         defaults: {
             metrics: {
-                probeTitle: 'remte',
+                probeTitle: 'RemoteHost',
                 title: langFile.title,
                 level: 'off',
                 icon: '/ZAutomation/api/v1/load/modulemedia/RemoteHost/icon_off.png'
