@@ -9,12 +9,23 @@ my $command = $ARGV[0];
 given ($command) {
     when('on') {
         my ($mac) = $ARGV[1];
-        my $ip = $ARGV[1];
+        print run_command("wakeonlan $mac")
+            ? 'ok':'fail';
     }
     when('off') {
         my ($username,$ip) = ($ARGV[1],$ARGV[2]);
+        print run_command("/usr/bin/ssh -y -i $ENV{HOME}/.ssh/id_rsa mpd\@$ip sudo /sbin/shutdown -h now")
+            ? 'ok':'fail';
     }
     when('check') {
         my $ip = $ARGV[1];
+        print run_command("ping -c 1 $ip")
+            ? 'on':'off';
     }
+}
+
+sub run_command {
+    my ($command) = @_;
+    my $status = `$command >/dev/null 2>\&1; echo \$?`;
+    return $status == 0 ? 1:0;
 }
