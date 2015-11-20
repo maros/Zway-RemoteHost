@@ -29,7 +29,7 @@ RemoteHost.prototype.init = function (config) {
     var langFile = self.controller.loadModuleLang("RemoteHost");
     
     // Create vdev
-    this.vDev = this.controller.devices.create({
+    self.vDev = this.controller.devices.create({
         deviceId: "RemoteHost_" + this.id,
         defaults: {
             metrics: {
@@ -48,15 +48,17 @@ RemoteHost.prototype.init = function (config) {
                     self.handleOn();
                     break;
                 case 'off':
-                    self.handleOn();
+                    self.handleOff();
                     break;
                 case 'update':
-                    self.checkState();
+                    setTimeout(_.bind(self.checkState,self),1);
                     break;
             }
         },
         moduleId: this.id
     });
+    
+    self.vDev.performCommand('update');
 };
 
 RemoteHost.prototype.stop = function () {
