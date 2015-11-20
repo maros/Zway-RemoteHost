@@ -4,23 +4,40 @@ TODO
 
 # Configuration
 
-TODO
+## ip
+
+IP address of the remote host
+
+## username
+
+Username for the remote host
+
+## mac
+
+MAC address for the remote host
 
 # Events
 
-TODO
+No events are emitted
 
 # Virtual Devices
 
 This module creates a virtual binary switch that turns on/off a remote Linux
 host.
 
-# Installation
+# Installation`
 
-Allow module to call remotehost command
+Install ethtool for wake on lan
+
+```shell
+sudo apt-get install ethtool
+``
+
+Allow module to call remotehost command and make helper executable
 
 ```shell
 echo '/opt/z-way-server/automation/modules/RemoteHost/remotehost' >> /opt/z-way-server/automation/.syscommands
+chmod a+x /opt/z-way-server/automation/modules/RemoteHost/remotehost
 ```
 
 ```shell
