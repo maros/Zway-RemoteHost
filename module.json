@@ -1,6 +1,6 @@
 {
     "author":"Maroš Kollár",
-    "category":"device_enhancements",
+    "category":"support_external_dev",
     "defaults":{
         "description":"__description__",
         "title":"__title__"
@@ -44,7 +44,7 @@
             },
             "mac": {
                 "required":true,
-                "pattern": "[A-Za-z0-9]{2}(:[A-Za-z0-9]{2}){5}$",
+                "pattern": "[A-Za-z0-9]{2}(:[A-Za-z0-9]{2}){5}$"
             }
         },
         "required":true,
