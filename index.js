@@ -88,16 +88,21 @@ RemoteHost.prototype.handleOff = function() {
 
 RemoteHost.prototype.checkState = function() {
     var self = this;
-    var state = self.runCommand('check');
+    var state = self.runCommand('check',self.config.ip);
     self.vDev.set("metrics:level", state);
-    self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/MotionTrigger/icon_"+state+".png");
+    self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/RemoteHost/icon_"+state+".png");
 };
 
 RemoteHost.prototype.runCommand = function() {
     var self = this;
     
-    var args    = Array.prototype.slice.call(arguments, 1);
+    var args    = Array.prototype.slice.call(arguments);
     var command = '/opt/z-way-server/automation/modules/RemoteHost/remotehost ' + args.join(' ');
     var output  = system(command);
-    return output.replace(/\n$/,"");
+    if (typeof(output) === 'undefined'
+        || output[0] !== 0) {
+        console.error('[RemoteHost] Error running command output for :'+command)
+    } else {
+        return output[1].replace(/\n$/,"");
+    }
 }
