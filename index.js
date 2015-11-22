@@ -97,7 +97,7 @@ RemoteHost.prototype.runCommand = function() {
     var self = this;
     
     var args    = Array.prototype.slice.call(arguments, 1);
-    var command = '/opt/z-way-server/automation/modules/RemoteHist/remotehost ' + args.join(' ');
+    var command = '/opt/z-way-server/automation/modules/RemoteHost/remotehost ' + args.join(' ');
     var output  = system(command);
-    return output.replace(/\n$/s,"");
+    return output.replace(/\n$/,"");
 }
