@@ -79,16 +79,24 @@ RemoteHost.prototype.stop = function () {
 RemoteHost.prototype.handleOn = function() {
     var self = this;
     self.runCommand('on',self.config.mac);
+    self.setState('on');
 };
 
 RemoteHost.prototype.handleOff = function() {
     var self = this;
     self.runCommand('off',self.config.username,self.config.ip);
+    self.setState('off');
 };
 
 RemoteHost.prototype.checkState = function() {
     var self = this;
     var state = self.runCommand('check',self.config.ip);
+    self.setState(state);
+};
+
+RemoteHost.prototype.setState = function(state) {
+    var self = this;
+    
     self.vDev.set("metrics:level", state);
     self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/RemoteHost/icon_"+state+".png");
 };
