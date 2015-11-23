@@ -12,7 +12,7 @@ zway and the target host must reside in the same network.
 
 ## ip
 
-IP address of the remote host
+IP address of the remote host (must be in the same network)
 
 ## username
 
@@ -20,7 +20,7 @@ Username for the remote host
 
 ## mac
 
-MAC address for the remote host
+MAC address of the remote host
 
 # Events
 
@@ -29,31 +29,30 @@ No events are emitted
 # Virtual Devices
 
 This module creates a virtual binary switch that turns on/off a remote Linux
-host. The state of the host is checked regularly by pinging the machine.
+host. The state of the host is checked regularly by pinging the ip addres.
 
 # Installation`
 
-Install ethtool for Wake on LAN
-
+Install ethtool to get Wake on LAN (make sure that WOL is enabled on the
+remote host)
 ```shell
 sudo apt-get install ethtool
-``
+```
 
 Allow module to call the remotehost command and make helper executable
-
 ```shell
 echo '/opt/z-way-server/automation/modules/RemoteHost/remotehost' >> /opt/z-way-server/automation/.syscommands
 chmod a+x /opt/z-way-server/automation/modules/RemoteHost/remotehost
 ```
 
-Create SSH key and copy to target machine
+Create an SSH key pair and copy the public key to target machine
 ```shell
-sudo su # change to the user running zway
+sudo su # change to the user running zway (usually root)
 ssh-keygen -t rsa -b 3072 -C "myname@zway.me"
 ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+```
 
 Now install
-
 ```shell
 cd /opt/z-way-server/automation/modules
 git clone https://github.com/maros/Zway-RemoteHost.git RemoteHost --branch latest
