@@ -1,4 +1,7 @@
 {
-    "title" : "Remote Host Switch",
-    "description" : "Switch remote hosts like binary swicthes"
+   "description" : "Switch remote hosts like binary swicthes",
+   "ip_label" : "IP Address",
+   "mac_label" : "MAC Address",
+   "title" : "Remote Host Switch",
+   "username_label" : "Username"
 }
