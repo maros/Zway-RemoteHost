@@ -1,5 +1,5 @@
 {
-   "description" : "Switch remote hosts like binary swicthes",
+   "description" : "Switch remote hosts like binary swicthes. Follow the installation manual at https://github.com/maros/Zway-RemoteHost to ensure proper functionalityS.",
    "ip_label" : "IP Address",
    "mac_label" : "MAC Address",
    "title" : "Remote Host Switch",
