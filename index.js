@@ -109,8 +109,8 @@ RemoteHost.prototype.runCommand = function() {
     var output  = system(command);
     if (typeof(output) === 'undefined'
         || output[0] !== 0) {
-        console.error('[RemoteHost] Error running command output for :'+command)
+        console.error('[RemoteHost] Error running command output for :'+command);
     } else {
         return output[1].replace(/\n$/,"");
     }
-}
+};
