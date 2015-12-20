@@ -39,7 +39,7 @@ remote host)
 sudo apt-get install ethtool
 ```
 
-Allow module to call the remotehost command and make helper executable
+Allow module to call the remote host command and make helper executable
 ```shell
 echo '/opt/z-way-server/automation/modules/RemoteHost/remotehost' >> /opt/z-way-server/automation/.syscommands
 chmod a+x /opt/z-way-server/automation/modules/RemoteHost/remotehost
