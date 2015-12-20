@@ -1,3 +1,8 @@
+1.02 2015 Dec 20, Sun
+    * Update docs and description
+    * cleanup jshint issues
+    * Fix typo
+
 1.01 2015 Nov 28, Sat
     * German translation
     * Set probeType
