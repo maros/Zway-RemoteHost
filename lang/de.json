@@ -1,5 +1,5 @@
 {
-   "m_descr" : "Erstellt einen binären Schalter der Rechner im selben Netzwerk starten, stoppen und überprüfen kann. Unbedingt die Installationsanleitung auf https://github.com/maros/Zway-RemoteHost beachten um die Funkionalität zu gewährleisten.",
+   "m_descr" : "Erstellt einen binären Schalter, der Rechner im selben Netzwerk starten, stoppen und überprüfen kann. Unbedingt die Installationsanleitung auf https://github.com/maros/Zway-RemoteHost beachten um die Funkionalität zu gewährleisten.",
    "ip_label" : "IP Adresse",
    "mac_label" : "MAC Adresse",
    "m_title" : "Remote Host Schalter",
