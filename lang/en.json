@@ -1,6 +1,6 @@
 {
    "ip_label" : "IP Address",
-   "m_descr" : "Creates a binary switch that controls and checks the status of a remote host. Follow the installation manual at https://github.com/maros/Zway-RemoteHost to ensure proper functionality.\nCheck https://github.com/maros/Zway-RemoteHost//blob/master/README.md for detailed documentation.",
+   "m_descr" : "Creates a binary switch that controls and checks the status of a remote host. Follow the installation manual at https:/github.com/maros/Zway-RemoteHost to ensure proper functionality.<br>Check  <a href=\"https://github.com/maros/Zway-RemoteHost/blob/master/README.md\">github.com/maros/Zway-RemoteHost</a> for detailed documentation.",
    "m_title" : "Remote Host Switch",
    "mac_label" : "MAC Address",
    "username_label" : "Username"
