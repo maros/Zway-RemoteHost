@@ -34,25 +34,32 @@ host. The state of the host is checked regularly by pinging the ip addres.
 # Installation`
 
 Install ethtool to get Wake on LAN (make sure that WOL is enabled on the
-remote host)
+remote host). On debian(raspbian) this can be done using this command
 ```shell
 sudo apt-get install ethtool
-```
-
-Allow module to call the remote host command and make helper executable
-```shell
-echo '/opt/z-way-server/automation/modules/RemoteHost/remotehost' >> /opt/z-way-server/automation/.syscommands
-chmod a+x /opt/z-way-server/automation/modules/RemoteHost/remotehost
 ```
 
 Create an SSH key pair and copy the public key to target machine
 ```shell
 sudo su # change to the user running zway (usually root)
-ssh-keygen -t rsa -b 3072 -C "myname@zway.me"
+ssh-keygen -t rsa -b 3072 -C "yourname@zway.me"
 ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
 ```
 
-Now install
+The prefered way of installing this module is via the "Zwave.me App Store"
+available in 2.2.0 and higher. For stable module releases no access token is 
+required. If you want to test the latest pre-releases use 'k1_beta' as 
+app store access token.
+
+Allow module to call the remote host command and make helper executable
+```shell
+echo '/opt/z-way-server/automation/userModules/RemoteHost/remotehost' >> /opt/z-way-server/automation/.syscommands
+chmod a+x /opt/z-way-server/automation/userModules/RemoteHost/remotehost
+```
+
+For developers and users of older Zway versions installation via git is 
+recommended.
+
 ```shell
 cd /opt/z-way-server/automation/modules
 git clone https://github.com/maros/Zway-RemoteHost.git RemoteHost --branch latest
@@ -60,7 +67,7 @@ git clone https://github.com/maros/Zway-RemoteHost.git RemoteHost --branch lates
 
 To update or install a specific version
 ```shell
-cd /opt/z-way-server/automation/modules/RemoteHost
+cd /opt/z-way-server/automation/userModules/RemoteHost
 git fetch --tags
 # For latest released version
 git checkout tags/latest
@@ -69,10 +76,6 @@ git checkout tags/1.02
 # For development version
 git checkout -b master --track origin/master
 ```
-
-Alternatively this module can be installed via the Z-Wave.me app store. Just
-go to Management > App Store Access and add 'k1_beta' access token. However,
-you will still need to setup .syscommands, ethtool and the ssh keys manually.
 
 # License
 
