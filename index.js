@@ -106,7 +106,7 @@ RemoteHost.prototype.runCommand = function() {
     
     var args    = Array.prototype.slice.call(arguments);
     var command = '/opt/z-way-server/automation/'+self.moduleBasePath()+'/remotehost ' + args.join(' ');
-    console.log('Try command "'+command+'"');
+    console.log('[RemoteHost] Try command "'+command+'"');
     var output  = system(command);
     if (typeof(output) === 'undefined'
         || output[0] !== 0) {
