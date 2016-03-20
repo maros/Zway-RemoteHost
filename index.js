@@ -39,7 +39,7 @@ RemoteHost.prototype.init = function (config) {
             }
         },
         overlay: {
-            probeType: 'RemoteHost',
+            probeType: 'remote_host',
             deviceType: 'switchBinary'
         },
         handler: function(command,args) {
