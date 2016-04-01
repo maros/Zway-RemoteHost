@@ -58,7 +58,9 @@ RemoteHost.prototype.init = function (config) {
         moduleId: this.id
     });
     
-    self.vDev.performCommand('update');
+    setTimeout(function() {
+        self.vDev.performCommand('update');
+    },1000);
 };
 
 RemoteHost.prototype.stop = function () {
