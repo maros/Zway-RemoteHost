@@ -27,7 +27,7 @@ RemoteHost.prototype.init = function (config) {
 
     var self = this;
     var langFile = self.controller.loadModuleLang("RemoteHost");
-    
+
     // Create vdev
     self.vDev = this.controller.devices.create({
         deviceId: "RemoteHost_" + this.id,
@@ -57,7 +57,7 @@ RemoteHost.prototype.init = function (config) {
         },
         moduleId: this.id
     });
-    
+
     setTimeout(function() {
         self.vDev.performCommand('update');
     },1000);
@@ -65,12 +65,12 @@ RemoteHost.prototype.init = function (config) {
 
 RemoteHost.prototype.stop = function () {
     var self = this;
-    
+
     if (self.vDev) {
         self.controller.devices.remove(self.vDev.id);
         self.vDev = undefined;
     }
-    
+
     RemoteHost.super_.prototype.stop.call(this);
 };
 
@@ -98,14 +98,14 @@ RemoteHost.prototype.checkState = function() {
 
 RemoteHost.prototype.setState = function(state) {
     var self = this;
-    
+
     self.vDev.set("metrics:level", state);
     self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/RemoteHost/icon_"+state+".png");
 };
 
 RemoteHost.prototype.runCommand = function() {
     var self = this;
-    
+
     var args    = Array.prototype.slice.call(arguments);
     var command = '/opt/z-way-server/automation/'+self.moduleBasePath()+'/remotehost ' + args.join(' ');
     console.log('[RemoteHost] Try command "'+command+'"');
