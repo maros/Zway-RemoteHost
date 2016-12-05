@@ -2,7 +2,7 @@
 
 Creates a switch that controls and checks the status of a remote host.
 
-* Turning on is done via Wake on LAN. Since WOL packets are not routable, 
+* Turning on is done via Wake on LAN. Since WOL packets are not routable,
 zway and the target host must reside in the same network.
 * Turning off is handled via SSH. You must ensure that the user running zway
 (usually root) has its public SSH key on the target machine
@@ -47,8 +47,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
 ```
 
 The prefered way of installing this module is via the "Zwave.me App Store"
-available in 2.2.0 and higher. For stable module releases no access token is 
-required. If you want to test the latest pre-releases use 'k1_beta' as 
+available in 2.2.0 and higher. For stable module releases no access token is
+required. If you want to test the latest pre-releases use 'k1_beta' as
 app store access token.
 
 Allow module to call the remote host command and make helper executable
@@ -57,7 +57,7 @@ echo '/opt/z-way-server/automation/userModules/RemoteHost/remotehost' >> /opt/z-
 chmod a+x /opt/z-way-server/automation/userModules/RemoteHost/remotehost
 ```
 
-For developers and users of older Zway versions installation via git is 
+For developers and users of older Zway versions installation via git is
 recommended.
 
 ```shell
@@ -81,7 +81,7 @@ git checkout -b master --track origin/master
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or any 
+the Free Software Foundation, either version 3 of the License, or any
 later version.
 
 Computer tower icon by Zlatko Najdenovski from the Noun Project
