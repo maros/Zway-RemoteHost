@@ -34,12 +34,12 @@ host. The state of the host is checked regularly by pinging the ip addres.
 # Installation`
 
 Install ethtool to get Wake on LAN (make sure that WOL is enabled on the
-remote host). On debian(raspbian) this can be done using this command
+remote host). On debian(raspbian) this can be done running this command
 ```shell
 sudo apt-get install ethtool
 ```
 
-Create an SSH key pair and copy the public key to target machine
+Create a SSH key pair and copy the public key to target machine
 ```shell
 sudo su # change to the user running zway (usually root)
 ssh-keygen -t rsa -b 3072 -C "yourname@zway.me"
