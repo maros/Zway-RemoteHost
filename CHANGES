@@ -1,3 +1,9 @@
+1.04 2017 Jun 24, Sat
+    * Update documentation, copyright
+    * Delay initial remote host check to speed up startup
+    * Update probeType
+    * Prefix log message
+
 1.03 2016 Mar 13, Sun
     * Fix path for userModules installation location
     * Fix path in installation howto
